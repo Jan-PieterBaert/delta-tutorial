@@ -1,6 +1,6 @@
 # Delta tutorial
 
-Welcome to the Delta Producer/Consumer Tutorial! In this comprehensive guide, we will walk you through the setup and configuration of the powerful Delta Producer and Consumer stacks. These essential components facilitate efficient data synchronization, allowing smooth data consumption between applications. As you'll see the tutorial can be used as a reference for other projects since all the steps are already done here. If you are following along the tutorial and want to run the application make sure to spend attention to the note in step 4.2 to first run the override.
+Welcome to the Delta Producer/Consumer Tutorial! In this comprehensive guide, we will walk you through the setup and configuration of the powerful Delta Producer and Consumer stacks. These essential components facilitate efficient data synchronization, allowing smooth data consumption between applications. As you'll see the tutorial can be used as a reference for other projects since all the steps are already done here. If you want to run the application during the tutorial be sure to note step 4.2's instruction to first run the override.
 
 Here's a brief outline of the tutorial:
 
@@ -90,7 +90,7 @@ In this step, we will walk you through the essential configuration steps for var
 ## Step 2.1: Configuring mu-authorization
 mu-authorization requires two crucial configurations:
 1. `config.ex`: Define permissions for editing specific kinds of triples based on user roles or groups.
-2. `delta-ex`: Configure delta notifications to ensure mu-authorization provides the delta-notifier with necessary delta messages.
+2. `delta.ex`: Configure delta notifications to ensure mu-authorization provides the delta-notifier with necessary delta messages.
 With these configurations in place, the jobs and tasks can be created and the delta-notifier will work as usual.
 
 ## Step 2.2: Configuring the Resource
