@@ -1,6 +1,6 @@
 # Delta tutorial
 
-Welcome to the Delta Producer/Consumer Tutorial! In this comprehensive guide, we will walk you through the setup and configuration of the powerful Delta Producer and Consumer stacks. These essential components facilitate efficient data synchronization, allowing smooth data consumption between applications. As you'll see the tutorial can be used as a reference for other projects since all the steps are already done here. If you want to run the application during the tutorial be sure to note step 4.2's instruction to first run the override.
+Welcome to the Delta Producer/Consumer Tutorial! In this comprehensive guide, we will walk you through the setup and configuration of the powerful Delta Producer and Consumer stacks. These essential components facilitate efficient data synchronization, allowing smooth data consumption between applications.
 
 Here's a brief outline of the tutorial:
 
