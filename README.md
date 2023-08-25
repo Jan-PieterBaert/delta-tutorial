@@ -90,7 +90,7 @@ In this step, we will walk you through the essential configuration steps for var
 ## Step 2.1: Configuring mu-authorization
 mu-authorization requires two crucial configurations:
 1. `config.ex`: Define permissions for editing specific kinds of triples based on user roles or groups.
-2. `delta-ex`: Configure delta notifications to ensure mu-authorization provides the delta-notifier with necessary delta messages.
+2. `delta.ex`: Configure delta notifications to ensure mu-authorization provides the delta-notifier with necessary delta messages.
 With these configurations in place, the jobs and tasks can be created and the delta-notifier will work as usual.
 
 ## Step 2.2: Configuring the Resource
@@ -200,11 +200,14 @@ When configuring the consumer, pay attention to the following variables:
 4. `DCR_DISABLE_DELTA_INGEST` and `DCR_DISABLE_INITIAL_SYNC`: In the `docker-compose.yml` file, set these variables to `true` and use an overriding docker-compose configuration file to switch them to `false` when needed.
 5. `INGEST_GRAPH`: The default is `http://mu.semte.ch/graphs/public`, but some backend services might require different graphs. Adjust accordingly based on your backend requirements.
 
+> **Note**
+> In order to start syncing, the consumer needs to do an initial sync and delta ingest. You'll have to run the override once where `DCR_DISABLE_DELTA_INGEST` and `DCR_DISABLE_INITIAL_SYNC` are set to false. After this you can run the normal docker compose with the values set to true again.
+
 By correctly configuring these variables, you can ensure smooth operation and data processing within the consumer component of your application.
 
 ## Step 4.3: Checking the Output
 After setting up the consumer and ingesting the initial dump and delta files, it's crucial to verify that the data is correctly synchronized between the producer and consumer. You can do this in two ways:
-1. **Using the Books Application:** Edit the books list on the producer side, and wait until the sync, including healing that creates deltas and ingestion on the consumer side, is completed. Then, check that the list is the same on the consumer side.
+1. **Using the Books Application:** Edit the books list on the producer side at `http://localhost:8888/books-frontend/book`, and wait until the sync, including healing that creates deltas and ingestion on the consumer side, is completed. Then, check that the list is the same on the consumer side at `http://localhost:8877/books-frontend/book`.
 2. **Comparing SPARQL Query Outputs:** Compare the SPARQL query outputs on `localhost:8879/sparql` (consumer) and `localhost:8889/sparql` (producer). Ensure that the data retrieved from both endpoints is consistent and reflects the changes made on the producer side.
 
 By performing these checks, you can ensure that the data synchronization is working correctly, and the producer and consumer are in harmony.
